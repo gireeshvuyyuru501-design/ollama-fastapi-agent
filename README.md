@@ -1,29 +1,62 @@
-# Ollama FastAPI Document Q&A Assistant
+﻿# Ollama FastAPI AI Document Q&A Assistant
 
-A local AI document question-answering API built with Python, FastAPI, Ollama, and Llama 3.2 3B.
+A local AI-powered Document Q&A REST API built with Python, FastAPI, Ollama, and Llama 3.2 3B.
 
 ## Features
-- REST API with FastAPI
-- Document-grounded question answering
-- Local LLM inference using Ollama
+- AI-powered document question answering
+- Local LLM inference with Ollama
+- Document-grounded prompting
 - Source identification
-- Interactive Swagger documentation
+- FastAPI REST endpoints
+- Swagger UI for API testing
+- No paid API key required
 
-## Setup
-pip install fastapi uvicorn requests
+## Technology Stack
+- Python
+- FastAPI
+- Ollama
+- Llama 3.2 3B
+- Pydantic
+- Requests
+- Swagger UI
+- Git and GitHub
 
-ollama pull llama3.2:3b
-python -m uvicorn app:app --reload
+## Installation
 
-## API
+Install dependencies:
+
+    pip install fastapi uvicorn requests
+
+Ensure Ollama is running and the model is installed:
+
+    ollama pull llama3.2:3b
+
+Start the API:
+
+    python -m uvicorn app:app --reload
+
+Open Swagger UI:
+
+http://127.0.0.1:8000/docs
+
+## Example Request
+
 POST /ask
 
-Example:
-{"question":"How many annual leave days do employees receive?"}
+    {"question": "How many annual leave days do employees receive?"}
 
-## Tested Result
-HTTP 200
-Employees receive 15 days of annual leave.
+## Example Response
 
-## Next Steps
-Azure AI Foundry integration, document upload, retrieval, and evaluation.
+    {
+      "answer": "Employees receive 15 days of annual leave.",
+      "source": "Company Policy"
+    }
+
+## Future Enhancements
+- Microsoft Foundry integration
+- PDF document upload
+- Vector search and RAG
+- AI evaluation and safety controls
+
+## License
+MIT License
